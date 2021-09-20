@@ -15,6 +15,19 @@ export const transitionEnabledState = atom({
   default: false,
 });
 
+export const trackWidthState = atom({
+  key: '@carousel/trackWidthState',
+  default: 0,
+});
+
+export const trackStylesState = atom({
+  key: '@carousel/trackStylesState',
+  default: {
+    marginLeft: 0,
+    transform: 0,
+  },
+});
+
 export const carouselStrategiesState = atom({
   key: '@carousel/carouselStrategiesState',
   default: [],

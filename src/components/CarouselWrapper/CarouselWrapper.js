@@ -12,6 +12,8 @@ import {
   nearestSlideSelector,
 } from '../../state/selectors/carouselSelectors';
 
+import Carousel from '../Carousel/Carousel';
+
 const CarouselWrapper = (props) => {
   const changeSlide = useSetRecoilState(getCurrentValueSelector);
   const value = useRecoilValue(carouselValueState);
@@ -42,7 +44,16 @@ const CarouselWrapper = (props) => {
 
   const isControlled = !_isNil(customValue);
 
-  return <div></div>;
+  return (
+    <Carousel
+      key={carouselProps?.plugins?.length || 0}
+      transformOffset={transformOffset}
+      nearestSlideIndex={nearestSlideIndex}
+      value={value}
+      onChange={isControlled ? onChange : changeSlide}
+      {...carouselProps}
+    />
+  );
 };
 
 const RecoiledComponent = (props) => (

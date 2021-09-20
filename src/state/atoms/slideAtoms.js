@@ -1,5 +1,10 @@
 import { atom } from 'recoil';
 
+export const activeSlideIndexState = atom({
+  key: '@carousel/activeSlideIndexState',
+  default: 0,
+});
+
 export const slideWidthState = atom({
   key: '@carousel/itemWidthState',
   default: 0,
