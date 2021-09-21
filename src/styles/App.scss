@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+}
+.TestCarousel__App {
+  background-image: url('../assets/bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.TestCarousel__Carousel-Card {
+  margin: 0 200px;
+}
+
+.TestCarousel__profile {
+  text-align: center;
+  position: absolute;
+  top: 50px;
+  span {
+    display: block;
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+    color: #ffffff;
+  }
+}

@@ -1,0 +1,38 @@
+.TestCarousel__card-wrapper {
+  text-align: center;
+  position: relative;
+  background: #fff;
+  border-radius: 20px;
+  img {
+    position: absolute;
+    left: 0%;
+    top: -80px;
+  }
+  .TestCarousel__card-info {
+    h3 {
+      padding: 64px 58px 0 58px;
+      margin: 0;
+      font-family: Roboto;
+      font-weight: bold;
+      font-size: 25px;
+      text-align: center;
+      color: #4e5b76;
+    }
+    p {
+      padding: 20px 40px 0 40px;
+      margin: 0;
+      font-family: Roboto;
+      font-weight: normal;
+      font-size: 14px;
+      text-align: center;
+      color: #a0a9b8;
+    }
+  }
+  .TestCarousel__card-viewBtn {
+    margin: 74px 72px 43px 72px;
+    padding: 9px 36px;
+    background: #303371;
+    border-radius: 19px;
+    color: #fff;
+  }
+}
