@@ -1,0 +1,72 @@
+/* variables */
+$dots-color: black;
+
+.TestCarousel__dots {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  line-height: 0;
+
+  &.TestCarousel__dots--isRTL {
+    direction: rtl;
+  }
+
+  .TestCarousel__dot {
+    outline: 0;
+    padding: 10px;
+    border: none;
+    opacity: 0.5;
+    font-size: 0;
+    cursor: pointer;
+    -webkit-appearance: none;
+
+    &.TestCarousel__dot--selected {
+      opacity: 1 !important;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      padding: 0;
+      border: none;
+      background: $dots-color;
+    }
+  }
+
+  .TestCarousel__thumbnail {
+    outline: 0;
+    padding: 10px;
+    border: none;
+    opacity: 0.5;
+    font-size: 0;
+    cursor: pointer;
+
+    &.TestCarousel__thumbnail--selected {
+      opacity: 1 !important;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.TestCarousel__thumbnail[type=button] {
+  -webkit-appearance: none;
+}
+
+.TestCarousel--isRTL {
+  + .TestCarousel__dots {
+    direction: rtl;
+  }
+}

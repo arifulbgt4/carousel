@@ -1,8 +1,8 @@
-import CarouselWrapper from './components/CarouselWrapper/CarouselWrapper';
+import CarouselWrapper from './components/CarouselWrapper';
 
-import { slidesToShow } from './constants/plugins';
+import slidesToShow from './plugins/slidesToShow';
 
-import './App.css';
+// import './App.css';
 
 function App() {
   return (
@@ -18,10 +18,6 @@ function App() {
           },
         ]}
       >
-        <img
-          src='https://brainhubeu.github.io/react-carousel/static/mona-7a1ceae9bdb8c43272eb101c091c5408.jpg'
-          alt=''
-        />
         <img
           src='https://brainhubeu.github.io/react-carousel/static/mona-7a1ceae9bdb8c43272eb101c091c5408.jpg'
           alt=''

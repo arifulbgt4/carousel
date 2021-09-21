@@ -1,8 +1,9 @@
 import React, { memo, useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
 import classname from 'classnames';
 import ResizeObserver from 'resize-observer-polyfill';
 
-import '../../styles/CarouselItem.scss';
+import '../styles/CarouselItem.scss';
 
 const CarouselSlide = ({
   index,
@@ -64,11 +65,11 @@ const CarouselSlide = ({
   return (
     <li
       className={classname(
-        'BrainhubCarouselItem',
+        'TestCarouselItem',
         {
-          'BrainhubCarouselItem--active': index === currentSlideIndex,
+          'TestCarouselItem--active': index === currentSlideIndex,
         },
-        ...(itemClassNames || [])
+        ...(itemClassNames || []),
       )}
       style={{
         marginRight: `${offset / 2}px`,
@@ -84,6 +85,20 @@ const CarouselSlide = ({
       {getChildren()}
     </li>
   );
+};
+
+CarouselSlide.propTypes = {
+  onMouseDown: PropTypes.func,
+  onTouchStart: PropTypes.func,
+  clickable: PropTypes.bool,
+  children: PropTypes.node,
+  width: PropTypes.number,
+  offset: PropTypes.number,
+  index: PropTypes.number,
+  currentSlideIndex: PropTypes.number,
+  isDragging: PropTypes.bool,
+  isDraggingEnabled: PropTypes.bool,
+  itemClassNames: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default memo(CarouselSlide);

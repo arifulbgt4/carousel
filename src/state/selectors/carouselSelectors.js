@@ -9,7 +9,6 @@ import {
   carouselValueState,
   slideMovementState,
 } from '../atoms/carouselAtoms';
-
 import {
   slideOffsetState,
   slideWidthState,
@@ -59,7 +58,6 @@ export const getCurrentValueSelector = selector({
   },
 });
 
-
 export const transformOffsetSelector = selector({
   key: '@carousel/transformOffsetSelector',
   get: ({ get }) => {
@@ -77,12 +75,12 @@ export const transformOffsetSelector = selector({
     const strategies = get(carouselStrategiesState)
       .map(
         (strategy) =>
-          strategy && strategy[CAROUSEL_STRATEGIES.GET_TRANSFORM_OFFSET],
+          strategy && strategy[CAROUSEL_STRATEGIES.GET_TRANSFORM_OFFSET]
       )
       .filter((strategy) => typeof strategy === 'function');
 
     const enhancedStrategies = strategies.map((strategy) =>
-      _bind(strategy, null, value),
+      _bind(strategy, null, value)
     );
 
     return strategies.length
@@ -108,12 +106,12 @@ export const nearestSlideSelector = selector({
     const strategies = get(carouselStrategiesState)
       .map(
         (strategy) =>
-          strategy && strategy[CAROUSEL_STRATEGIES.GET_NEAREST_SLIDE],
+          strategy && strategy[CAROUSEL_STRATEGIES.GET_NEAREST_SLIDE]
       )
       .filter((strategy) => typeof strategy === 'function');
 
     const enhancedStrategies = strategies.map((strategy) =>
-      _bind(strategy, null, value),
+      _bind(strategy, null, value)
     );
 
     return strategies.length

@@ -2,17 +2,19 @@ import React, { useEffect } from 'react';
 import { useRecoilValue, RecoilRoot, useSetRecoilState } from 'recoil';
 import _isNil from 'lodash/isNil';
 import _omit from 'lodash/omit';
+import PropTypes from 'prop-types';
+
 import {
   carouselValueState,
   transitionEnabledState,
-} from '../../state/atoms/carouselAtoms';
+} from '../state/atoms/carouselAtoms';
 import {
   getCurrentValueSelector,
-  transformOffsetSelector,
   nearestSlideSelector,
-} from '../../state/selectors/carouselSelectors';
+  transformOffsetSelector,
+} from '../state/selectors/carouselSelectors';
 
-import Carousel from '../Carousel/Carousel';
+import Carousel from './Carousel';
 
 const CarouselWrapper = (props) => {
   const changeSlide = useSetRecoilState(getCurrentValueSelector);
@@ -26,7 +28,6 @@ const CarouselWrapper = (props) => {
   }, [props.value, setTransitionEnabled]);
 
   const { onChange, value: customValue, ...rest } = props;
-
   const transformOffset = useRecoilValue(transformOffsetSelector);
   const nearestSlideIndex = useRecoilValue(nearestSlideSelector);
 
@@ -39,11 +40,10 @@ const CarouselWrapper = (props) => {
         ...prev,
         ...props,
       }),
-      _omit(rest, ['breakpoints'])
+      _omit(rest, ['breakpoints']),
     );
 
   const isControlled = !_isNil(customValue);
-
   return (
     <Carousel
       key={carouselProps?.plugins?.length || 0}
@@ -54,6 +54,11 @@ const CarouselWrapper = (props) => {
       {...carouselProps}
     />
   );
+};
+
+CarouselWrapper.propTypes = {
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  onChange: PropTypes.func,
 };
 
 const RecoiledComponent = (props) => (

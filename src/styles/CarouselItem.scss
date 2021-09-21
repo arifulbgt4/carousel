@@ -1,13 +1,19 @@
-.BrainhubCarouselItem {
+.TestCarouselItem {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  &.BrainhubCarouselItem--clickable {
+  overflow: hidden;
+  padding: 0 13px;
+  margin-top: 50px;
+  img{
+    max-width: 100%;
+  }
+  &.TestCarouselItem--clickable {
     cursor: pointer;
   }
-  &.BrainhubCarouselItem--active {
-
+  &.TestCarouselItem--active {
+    margin-top: 0px;
   }
   .debug-number {
     position: absolute;

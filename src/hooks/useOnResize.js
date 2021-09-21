@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react';
 import _throttle from 'lodash/throttle';
 
+import config from '../constants/config';
+
 const useOnResize = ({
   width,
   carouselRef,
@@ -14,7 +16,7 @@ const useOnResize = ({
     }
 
     setItemWidth(trackContainerRef.current.offsetWidth);
-  }, 300);
+  }, config.resizeEventListenerThrottle);
 
   useEffect(() => {
     if (isInitialMount.current) {
